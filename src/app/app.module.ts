@@ -15,7 +15,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     HeaderComponent,
     SliderComponent,
     GalleryComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],

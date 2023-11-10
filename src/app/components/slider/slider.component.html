@@ -1,1 +1,6 @@
-<p>slider works!</p>
+<div class="">
+  <div  *ngFor="let item of list">
+    <img [src]="pictureUriSmall + item.backdrop_path" [alt]="item.title" />
+  </div>
+</div>
+

@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let item of list" [routerLink]="[item.id]">
+    <img [src]="pictureUriSmall + item.poster_path" alt="" />
+    <div>
+      {{ item.original_title }}
+      {{ item.release_date }}
+      {{ item.vote_average }}
+    </div>
+  </li>
+</ul>

@@ -1,11 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Movie } from 'src/app/model/types';
+import { GetMovieByIdService } from 'src/app/services/movies/get-movie-by-id.service';
+import { PICTURE_URI_SMALL } from 'src/helpers/constants';
 
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
 })
 export class MovieDetailsComponent implements OnInit {
-  constructor() {}
+  movie!: Movie;
+  id!: number;
+  pictureUri: string = PICTURE_URI_SMALL;
+  constructor(
+    private getMovieByIdService: GetMovieByIdService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.getMovieByIdService.getMovieById(this.id).subscribe((data) => {
+      this.movie = data;
+    })
+  }
 }

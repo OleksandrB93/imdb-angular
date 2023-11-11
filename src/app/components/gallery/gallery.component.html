@@ -1,6 +1,6 @@
 <app-slider [list]="list"></app-slider>
 
-<ul>
+<ul style="margin-top: 30px">
   <li *ngFor="let item of list" [routerLink]="[item.id]">
     <img [src]="pictureUriSmall + item.poster_path" alt="" />
     <div>

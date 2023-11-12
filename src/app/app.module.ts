@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LogoComponent } from './components/logo/logo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import { LogoComponent } from './components/logo/logo.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     CarouselModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent, ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

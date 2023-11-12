@@ -7,6 +7,7 @@ import { PICTURE_URI_SMALL } from 'src/helpers/constants';
 @Component({
   selector: 'app-movie-details',
   templateUrl: './movie-details.component.html',
+  styleUrls: ['./movie-details.component.sass'],
 })
 export class MovieDetailsComponent implements OnInit {
   movie!: Movie;

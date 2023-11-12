@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     SliderComponent,
     GalleryComponent,
     MovieDetailsComponent,
+    LogoComponent,
   ],
   imports: [
     BrowserModule,

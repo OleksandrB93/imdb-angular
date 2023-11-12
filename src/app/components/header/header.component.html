@@ -1,21 +1,27 @@
 <header class="header" [class.scrolled]="scrolled">
   <app-logo></app-logo>
-  <button type="button" class="header__button">
+  <button type="button" class="header__menu__button">
     <i class="bi bi-list"></i>Menu
   </button>
-  <input
-    class="header__input"
-    type="text"
-    placeholder="Search"
-    [(ngModel)]="keyword"
-  />
-  <button type="button" class="header__input__button" (click)="getMovieByKeyword()">
-    Search
-  </button>
+  <div style="display: flex; position: relative; width: 100%">
+    <input
+      class="header__input"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="keyword"
+    />
+    <button
+      type="button"
+      class="header__input__button"
+      (click)="getMovieByKeyword()"
+    >
+      Search
+    </button>
+  </div>
 
-  <button type="button" class="header__button">IMDBPro</button>
+  <button type="button" class="header__subscribe__button">IMDBPro</button>
   <div class="header__separater"></div>
-  <button type="button" class="header__button">
+  <button type="button" class="header__button__watchlist">
     <i class="bi bi-bookmark-plus"></i>Wathchlist
   </button>
 </header>

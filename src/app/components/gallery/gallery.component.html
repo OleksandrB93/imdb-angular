@@ -1,12 +1,20 @@
-<app-slider [list]="list"></app-slider>
+<app-slider *ngIf="!isSearching" [list]="list"></app-slider>
 
-<ul style="margin-top: 30px">
-  <li *ngFor="let item of list" [routerLink]="[item.id]">
+<ul class="gallery">
+  <li *ngFor="let item of list" [routerLink]="[item.id]" class="gallery__item">
     <img [src]="pictureUriSmall + item.poster_path" alt="" />
-    <div>
-      {{ item.original_title }}
-      {{ item.release_date }}
-      {{ item.vote_average }}
+    <div class="gallery__item__description">
+      <p class="gallery__item__description__title">
+        {{ item.original_title }}
+      </p>
+      <div class="gallery__item__description__info">
+        <p class="gallery__item__description__info__date">
+          {{ item.release_date }}
+        </p>
+        <p class="gallery__item__description__info__rating">
+          {{ item.vote_average }}
+        </p>
+      </div>
     </div>
   </li>
 </ul>

@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Movie } from 'src/app/model/types';
+import { MovieDataServices } from 'src/app/services/movie-data-services.service';
 import { GetMovieMyKeywordService } from 'src/app/services/movies/get-movie-my-keyword.service';
 
 @Component({
@@ -13,11 +14,14 @@ export class HeaderComponent {
   keyword: string = '';
   searchList: Movie[] = [];
 
-  constructor(private getMovieMyKeywordService: GetMovieMyKeywordService) {}
+  constructor(
+    private getMovieMyKeywordService: GetMovieMyKeywordService,
+    private searchListService: MovieDataServices
+  ) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.scrolled = window.scrollY > 20;
+    this.scrolled = window.scrollY > 0;
   }
 
   getMovieByKeyword() {
@@ -25,6 +29,8 @@ export class HeaderComponent {
       .getMovieByKeyword(this.keyword)
       .subscribe((data) => {
         this.searchList = data.results;
+
+        this.searchListService.updateSearchList(this.searchList);
       });
   }
 }

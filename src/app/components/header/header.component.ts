@@ -1,7 +1,9 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { finalize } from 'rxjs';
 import { Movie } from 'src/app/model/types';
 import { MovieDataServices } from 'src/app/services/movie-data-services.service';
 import { GetMovieMyKeywordService } from 'src/app/services/movies/get-movie-my-keyword.service';
+import { LoaderService } from 'src/app/services/movies/loader-service.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +18,8 @@ export class HeaderComponent {
 
   constructor(
     private getMovieMyKeywordService: GetMovieMyKeywordService,
-    private searchListService: MovieDataServices
+    private searchListService: MovieDataServices,
+    private loaderService: LoaderService
   ) {}
 
   @HostListener('window:scroll', [])
@@ -25,11 +28,17 @@ export class HeaderComponent {
   }
 
   getMovieByKeyword() {
+    this.loaderService.showLoader();
+
     this.getMovieMyKeywordService
       .getMovieByKeyword(this.keyword)
+      .pipe(
+        finalize(() => {
+          this.loaderService.hideLoader();
+        })
+      )
       .subscribe((data) => {
         this.searchList = data.results;
-
         this.searchListService.updateSearchList(this.searchList);
       });
   }

@@ -9,10 +9,10 @@
       </p>
       <div class="gallery__item__description__info">
         <p class="gallery__item__description__info__date">
-          {{ item.release_date }}
+          {{ item.release_date | date : "dd.MM.yyyy" }}
         </p>
         <p class="gallery__item__description__info__rating">
-          {{ item.vote_average }}
+          {{ item.vote_average | number : "1.1-1" }}
         </p>
       </div>
     </div>

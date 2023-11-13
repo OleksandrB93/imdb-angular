@@ -11,6 +11,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LogoComponent } from './components/logo/logo.component';
 import { FormsModule } from '@angular/forms';
+import { LoaderInterceptorComponent } from './components/loader-interceptor/loader-interceptor.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     GalleryComponent,
     MovieDetailsComponent,
     LogoComponent,
+    LoaderInterceptorComponent,
   ],
   imports: [
     BrowserModule,

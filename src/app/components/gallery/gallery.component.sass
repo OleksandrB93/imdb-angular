@@ -1,30 +1,22 @@
-ul
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-evenly
-    gap: 10px
-    li  
-        width: 250px
-        img
-            width: 250px
-            height: 100%
-            object-fit: cover
-
 .gallery
     margin-top: 100px
     display: flex
     flex-wrap: wrap
     justify-content: space-evenly
-    gap: 10px
-
-    li  
-        position: relative
-        width: 250px
-        img
-            width: 250px
+    gap: 30px
 
     &__item
         position: relative
+        width: 250px
+        border-radius: 10px
+        overflow: hidden
+        &:hover
+            box-shadow: #f6c9005d 0px 6px 12px -2px, #f6c900a4 0px 3px 7px -3px
+
+        img
+            width: 250px
+            height: 100%
+            object-fit: cover
 
     &__item__description
         position: absolute
@@ -51,18 +43,23 @@ ul
         color:  #f6c700
 
     &__item__description__info
-        display: flex
-        justify-content: space-around
+        position: relative
 
     &__item__description__info__date
         padding: 5px 10px
         border-radius: 5px
         color: black
         background-color: #f6c700
+        position: absolute
+        left: 5px
+        top: 0
 
     &__item__description__info__rating
         padding: 5px 10px
         border-radius: 5px
         color: black
         background-color: #f6c700
- 
+        position: absolute
+        right: 5px
+        top: 0
+

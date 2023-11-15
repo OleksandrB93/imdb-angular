@@ -1,6 +1,8 @@
 <app-slider *ngIf="!isSearching" [list]="list"></app-slider>
 
-<ul class="gallery">
+<app-pagination-buttons *ngIf="!isSearching"></app-pagination-buttons>
+
+<ul class="gallery" [ngClass]="isSearching ? 'marginTop' : ''">
   <li *ngFor="let item of list" [routerLink]="[item.id]" class="gallery__item">
     <img [src]="pictureUriSmall + item.poster_path" alt="" />
     <div class="gallery__item__description">
@@ -18,3 +20,5 @@
     </div>
   </li>
 </ul>
+
+<app-pagination-buttons *ngIf="!isSearching"></app-pagination-buttons>

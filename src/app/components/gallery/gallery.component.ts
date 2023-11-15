@@ -3,7 +3,8 @@ import { PICTURE_URI_SMALL } from 'src/helpers/constants';
 import { Movie } from 'src/app/model/types';
 import { GetTrendMoviesService } from 'src/app/services/movies/get-trend-movies.service';
 import { Router } from '@angular/router';
-import { MovieDataServices} from 'src/app/services/movie-data-services.service';
+import { MovieDataServices } from 'src/app/services/movie-data-services.service';
+import { LoaderService } from 'src/app/services/movies/loader-service.service';
 
 @Component({
   selector: 'app-gallery',
@@ -18,7 +19,7 @@ export class GalleryComponent implements OnInit {
   constructor(
     private trendMoviesService: GetTrendMoviesService,
     private searchListService: MovieDataServices,
-    private router: Router
+    private loaderService: LoaderService
   ) {}
 
   ngOnInit(): void {
@@ -27,9 +28,11 @@ export class GalleryComponent implements OnInit {
         this.list = searchList;
         this.isSearching = true;
       } else {
+        this.loaderService.showLoader()
         this.trendMoviesService.getTrendMovies().subscribe((data) => {
           this.list = data;
-          this.isSearching = false
+          this.loaderService.hideLoader()
+          this.isSearching = false;
         });
       }
     });

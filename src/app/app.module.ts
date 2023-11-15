@@ -12,6 +12,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { LogoComponent } from './components/logo/logo.component';
 import { FormsModule } from '@angular/forms';
 import { LoaderInterceptorComponent } from './components/loader-interceptor/loader-interceptor.component';
+import { PaginationButtonsComponent } from './components/pagination-buttons/pagination-buttons.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LoaderInterceptorComponent } from './components/loader-interceptor/load
     MovieDetailsComponent,
     LogoComponent,
     LoaderInterceptorComponent,
+    PaginationButtonsComponent,
   ],
   imports: [
     BrowserModule,

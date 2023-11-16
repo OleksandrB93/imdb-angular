@@ -2,7 +2,6 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { PICTURE_URI_SMALL } from 'src/helpers/constants';
 import { Movie } from 'src/app/model/types';
 import { GetTrendMoviesService } from 'src/app/services/movies/get-trend-movies.service';
-import { Router } from '@angular/router';
 import { MovieDataServices } from 'src/app/services/movie-data-services.service';
 import { LoaderService } from 'src/app/services/movies/loader-service.service';
 import { WathlistService } from 'src/app/services/movies/wathlist.service';

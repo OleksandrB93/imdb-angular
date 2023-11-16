@@ -6,8 +6,10 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 const routes: Routes = [
   { path: 'watchlist', component: WatchlistComponent },
+  { path: 'serials', component: GalleryComponent },
+  { path: 'movies', component: GalleryComponent },
+  { path: 'movies/:id', component: MovieDetailsComponent },
   { path: '', component: GalleryComponent },
-  { path: ':id', component: MovieDetailsComponent },
 ];
 
 @NgModule({

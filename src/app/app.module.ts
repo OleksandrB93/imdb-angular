@@ -15,6 +15,8 @@ import { LoaderInterceptorComponent } from './components/loader-interceptor/load
 import { PaginationButtonsComponent } from './components/pagination-buttons/pagination-buttons.component';
 import { TrailerComponent } from './components/trailer/trailer.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { BergerButtonComponent } from './components/berger-button/berger-button.component';
+import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     PaginationButtonsComponent,
     TrailerComponent,
     WatchlistComponent,
+    BergerButtonComponent,
+    BurgerMenuComponent,
   ],
   imports: [
     BrowserModule,

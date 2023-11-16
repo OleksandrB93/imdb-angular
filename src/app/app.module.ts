@@ -17,6 +17,7 @@ import { TrailerComponent } from './components/trailer/trailer.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { BergerButtonComponent } from './components/berger-button/berger-button.component';
 import { BurgerMenuComponent } from './components/burger-menu/burger-menu.component';
+import { TvListComponent } from './components/tv-list/tv-list.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BurgerMenuComponent } from './components/burger-menu/burger-menu.compon
     WatchlistComponent,
     BergerButtonComponent,
     BurgerMenuComponent,
+    TvListComponent,
   ],
   imports: [
     BrowserModule,

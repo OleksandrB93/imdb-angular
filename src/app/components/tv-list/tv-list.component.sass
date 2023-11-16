@@ -1,0 +1,88 @@
+.gallery
+    margin-top: 100px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    gap: 30px
+
+    &__item
+        position: relative
+        width: 250px
+        border-radius: 10px
+        overflow: hidden
+        &:hover
+            box-shadow: #f6c9005d 0px 6px 12px -2px, #f6c900a4 0px 3px 7px -3px
+
+        img
+            width: 250px
+            height: 100%
+            object-fit: cover
+
+    &__item__description
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 2
+        width: 100%
+        height: 20%
+        background-color: rgba(0, 0, 0, 0.5)
+        color: white
+        opacity: 0
+
+        transition: all 0.2s ease-in-out
+    &__item:hover
+        .gallery__item__description
+            bottom:0
+            opacity: 1
+
+    &__item__description__title
+        display: flex
+        justify-content: center
+        margin-bottom: 10px
+        text-decoration: underline
+        color:  #f6c700
+
+    &__item__description__info
+        position: relative
+
+    &__item__description__info__date
+        padding: 5px 10px
+        border-radius: 5px
+        color: black
+        background-color: #f6c700
+        position: absolute
+        left: 5px
+        top: 0
+
+    &__item__description__info__rating
+        padding: 5px 10px
+        border-radius: 5px
+        color: black
+        background-color: #f6c700
+        position: absolute
+        right: 5px
+        top: 0
+
+.wathchlist-buttons
+    display: flex
+    gap: 5px
+    position: absolute
+    top: 5px
+    right: 5px
+
+.wathchlist-button
+    background-color: black
+    fill: white
+    border-radius: 3px
+    padding: 2px 3px
+    color: black
+    border: none
+
+    transition: all 0.3s ease-in-out
+    &:hover
+        background-color: rgb(255, 115, 0)
+        
+.bi-bookmark-plus
+    color: white
+.bi-bookmark-dash
+    color: white

@@ -18,6 +18,7 @@ export class GetTrendMoviesService {
     return this.page$.pipe(
       switchMap((page) => {
         const url = `${BASE_URI}/trending/all/day?api_key=${API_KEY}&page=${page}`;
+
         return this.http.get<{ results: Movie[]; total_pages: number }>(url);
       }),
       tap((data) => {

@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { LoaderInterceptorComponent } from './components/loader-interceptor/loader-interceptor.component';
 import { PaginationButtonsComponent } from './components/pagination-buttons/pagination-buttons.component';
 import { TrailerComponent } from './components/trailer/trailer.component';
+import { WatchlistComponent } from './components/watchlist/watchlist.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TrailerComponent } from './components/trailer/trailer.component';
     LoaderInterceptorComponent,
     PaginationButtonsComponent,
     TrailerComponent,
+    WatchlistComponent,
   ],
   imports: [
     BrowserModule,

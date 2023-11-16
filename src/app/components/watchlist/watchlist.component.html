@@ -1,0 +1,15 @@
+<div class="title">
+  <p>{{ watchlist.length === 0 ? "Watchlist is empty" : "Watchlist" }}</p>
+</div>
+<ul class="watchlist" *ngIf="watchlist.length > 0">
+  <li class="watchlist__item" *ngFor="let movie of watchlist">
+    <img [src]="pictureUriSmall + movie.poster_path" alt="{{ movie.title }}" />
+    <div class="watchlist__item__info">
+      <h3>{{ movie.title }}</h3>
+      <p>{{ movie.release_date | date : "shortDate" }}</p>
+      <button (click)="removeFromWatchlist(movie.id)">
+        Remove from Watchlist
+      </button>
+    </div>
+  </li>
+</ul>

@@ -5,6 +5,7 @@ import { GetTrendMoviesService } from 'src/app/services/movies/get-trend-movies.
 import { Router } from '@angular/router';
 import { MovieDataServices } from 'src/app/services/movie-data-services.service';
 import { LoaderService } from 'src/app/services/movies/loader-service.service';
+import { WathlistService } from 'src/app/services/movies/wathlist.service';
 
 @Component({
   selector: 'app-gallery',
@@ -19,8 +20,17 @@ export class GalleryComponent implements OnInit {
   constructor(
     private trendMoviesService: GetTrendMoviesService,
     private searchListService: MovieDataServices,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
+    private watchlistService: WathlistService
   ) {}
+
+    addToWatchList(movie: Movie):void {
+      this.watchlistService.addToWatchlist(movie);
+    }
+
+    removeFromWatchList(movieId: number):void {
+      this.watchlistService.removeFromWatchlist(movieId);
+    }
 
   ngOnInit(): void {
     this.searchListService.searchList$.subscribe((searchList) => {
@@ -28,10 +38,10 @@ export class GalleryComponent implements OnInit {
         this.list = searchList;
         this.isSearching = true;
       } else {
-        this.loaderService.showLoader()
+        this.loaderService.showLoader();
         this.trendMoviesService.getTrendMovies().subscribe((data) => {
           this.list = data;
-          this.loaderService.hideLoader()
+          this.loaderService.hideLoader();
           this.isSearching = false;
         });
       }

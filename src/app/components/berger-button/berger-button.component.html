@@ -2,4 +2,7 @@
   <i class="bi bi-list"></i>Menu
 </button>
 
-<app-burger-menu *ngIf="isVisible"></app-burger-menu>
+<app-burger-menu
+  *ngIf="isVisible"
+  (menuItemClicked)="onMenuItemClick()"
+></app-burger-menu>

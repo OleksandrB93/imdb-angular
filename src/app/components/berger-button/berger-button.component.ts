@@ -14,10 +14,18 @@ export class BergerButtonComponent {
     this.isVisible = !this.isVisible;
   }
 
+  closeMenu() {
+    this.isVisible = false;
+  }
+
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event): void {
     if (!this.elementRef.nativeElement.contains(event.target)) {
       this.isVisible = false;
     }
+  }
+
+  onMenuItemClick(): void {
+    this.closeMenu();
   }
 }

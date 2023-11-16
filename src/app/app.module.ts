@@ -13,6 +13,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { FormsModule } from '@angular/forms';
 import { LoaderInterceptorComponent } from './components/loader-interceptor/loader-interceptor.component';
 import { PaginationButtonsComponent } from './components/pagination-buttons/pagination-buttons.component';
+import { TrailerComponent } from './components/trailer/trailer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PaginationButtonsComponent } from './components/pagination-buttons/pagi
     LogoComponent,
     LoaderInterceptorComponent,
     PaginationButtonsComponent,
+    TrailerComponent,
   ],
   imports: [
     BrowserModule,

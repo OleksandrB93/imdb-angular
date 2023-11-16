@@ -1,0 +1,12 @@
+<div class="trailer">
+  <iframe
+    class="trailer__content"
+    width="900"
+    height="450"
+    *ngIf="trailer"
+    [src]="safeTrailerUrl"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>

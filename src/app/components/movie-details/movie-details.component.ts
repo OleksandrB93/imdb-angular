@@ -14,6 +14,7 @@ export class MovieDetailsComponent implements OnInit {
   movie!: Movie;
   id!: number;
   pictureUri: string = PICTURE_URI_SMALL;
+  
   constructor(
     private getMovieByIdService: GetMovieByIdService,
     private route: ActivatedRoute,

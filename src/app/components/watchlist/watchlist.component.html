@@ -5,10 +5,10 @@
   <li class="watchlist__item" *ngFor="let movie of watchlist">
     <img [src]="pictureUriSmall + movie.poster_path" alt="{{ movie.title }}" />
     <div class="watchlist__item__info">
-      <h3>{{ movie.title }}</h3>
-      <p>{{ movie.release_date | date : "shortDate" }}</p>
+      <p>{{ movie.title ? movie.title : 'The Title' }}</p>
+      <p>{{ movie.release_date | date : "dd.MM.yyyy" }}</p>
       <button (click)="removeFromWatchlist(movie.id)">
-        Remove from Watchlist
+        <i class="bi bi-bookmark-dash"></i>
       </button>
     </div>
   </li>

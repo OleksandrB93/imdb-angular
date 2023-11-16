@@ -8,12 +8,14 @@
 .watchlist 
     display: flex
     flex-wrap: wrap
+    justify-content: space-evenly
     gap: 20px
-
+    
     &__item
+        position: relative
         width: 250px
         border-radius: 10px
-        // overflow: hidden
+        overflow: hidden
         &:hover
             box-shadow: #f6c9005d 0px 6px 12px -2px, #f6c900a4 0px 3px 7px -3px
 
@@ -22,8 +24,27 @@
             height: 100%
             object-fit: cover
         &__info
+            min-height: 50px
+            position: absolute
+            bottom: 0
+            width: 100%
             font-size: 20px
             font-style: italic
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
-            color: #f6c700
-            margin: 10px
+            padding: 5px 10px
+            border-radius: 5px
+            color: black
+            background-color: #f6c700
+        button
+            position: absolute
+            top: 5px
+            right: 5px
+            background-color: #f6c700
+            border-radius: 3px
+            padding: 2px 3px
+            color: black
+            border: none
+
+            transition: all 0.3s ease-in-out
+            &:hover
+                background-color: rgb(255, 115, 0)

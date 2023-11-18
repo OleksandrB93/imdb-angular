@@ -4,11 +4,15 @@ import { Movie } from 'src/app/model/types';
 import { MovieDataServices } from 'src/app/services/movie-data-services.service';
 import { GetMovieMyKeywordService } from 'src/app/services/movies/get-movie-my-keyword.service';
 import { LoaderService } from 'src/app/services/movies/loader-service.service';
+import { LogoComponent } from '../logo/logo.component';
+import { BurgerMenuComponent } from '../AM/burger-menu/burger-menu.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass'],
+  standalone: true,
+  imports: [LogoComponent, BurgerMenuComponent],
 })
 @HostListener('window:scroll', [])
 export class HeaderComponent {

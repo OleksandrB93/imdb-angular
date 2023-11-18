@@ -8,7 +8,7 @@ import { TvListComponent } from './components/tv-list/tv-list.component';
 const routes: Routes = [
   { path: 'watchlist', component: WatchlistComponent },
   { path: 'serials', component: TvListComponent },
-  // { path: 'movies', component: GalleryComponent },
+  { path: 'movies', component: GalleryComponent },
   { path: ':id', component: MovieDetailsComponent },
   { path: '', component: GalleryComponent },
 ];

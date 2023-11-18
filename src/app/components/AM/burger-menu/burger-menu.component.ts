@@ -1,16 +1,12 @@
-import {Component} from '@angular/core';
-// import {ArrayDataSource} from '@angular/cdk/collections';
-// import {FlatTreeControl, CdkTreeModule} from '@angular/cdk/tree';
-// import {MatIconModule} from '@angular/material/icon';
-// import {MatButtonModule} from '@angular/material/button';
+import { Component } from '@angular/core';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-burger-menu',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule, MatMenuModule],
   templateUrl: './burger-menu.component.html',
-  styleUrl: './burger-menu.component.sass'
+  styleUrl: './burger-menu.component.sass',
 })
-export class BurgerMenuComponent {
-
-}
+export class BurgerMenuComponent {}

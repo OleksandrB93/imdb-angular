@@ -17,7 +17,7 @@ export class GetTrendMoviesService {
   getTrendMovies(): Observable<Movie[]> {
     return this.page$.pipe(
       switchMap((page) => {
-        const url = `${BASE_URI}/trending/all/day?api_key=${API_KEY}&page=${page}`;
+        const url = `${BASE_URI}/trending/all/week?api_key=${API_KEY}&page=${page}`;
 
         return this.http.get<{ results: Movie[]; total_pages: number }>(url);
       }),

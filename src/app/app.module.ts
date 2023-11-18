@@ -15,6 +15,7 @@ import { TrailerComponent } from './components/trailer/trailer.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { TvListComponent } from './components/tv-list/tv-list.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HeaderComponent } from './components/header/header.component';
     AppRoutingModule,
     FormsModule,
     CarouselModule.forRoot(),
-    HeaderComponent
+    HeaderComponent,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

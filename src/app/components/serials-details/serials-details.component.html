@@ -1,0 +1,23 @@
+<div class="movie-details">
+    <div>
+      <img
+        class="movie-details__image"
+        [src]="pictureUri + serial.poster_path"
+        [alt]="serial.title"
+      />
+      <div class="serial-details__info">
+        <p class="serial-details__title">{{ serial.title }}</p>
+        <p class="serial-details__description">{{ serial.overview }}</p>
+        <p class="serial-details__date">
+          {{ serial.first_air_date | date : "dd.MM.yyyy" }}
+        </p>
+        <p class="serial-details__rating">
+          {{ serial.vote_average | number : "1.1-1" }}
+        </p>
+      </div>
+    </div>
+    <div style="max-height: 450px">
+      <!-- <app-trailer [id]="serial.id"></app-trailer> -->
+    </div>
+  </div>
+  

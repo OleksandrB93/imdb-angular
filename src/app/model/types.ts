@@ -30,8 +30,8 @@ export interface MovieTrailer {
 }
 
 export interface TV {
-title: any;
-original_title: any;
+  title: any;
+  original_title: any;
   adult: boolean;
   backdrop_path: string;
   first_air_date: string;

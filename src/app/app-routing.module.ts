@@ -4,10 +4,12 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { TvListComponent } from './components/tv-list/tv-list.component';
+import { SerialsDetailsComponent } from './components/serials-details/serials-details.component';
 
 const routes: Routes = [
   { path: 'watchlist', component: WatchlistComponent },
-  { path: 'serials', component: TvListComponent },
+  { path: 'tv', component: TvListComponent },
+  { path: 'tv/:id', component: SerialsDetailsComponent },
   { path: 'movies', component: GalleryComponent },
   { path: ':id', component: MovieDetailsComponent },
   { path: '', component: GalleryComponent },

@@ -1,9 +1,8 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PICTURE_URI_SMALL } from 'src/helpers/constants';
 import { Movie } from 'src/app/model/types';
 import { GetTrendMoviesService } from 'src/app/services/movies/get-trend-movies.service';
 import { MovieDataServices } from 'src/app/services/movie-data-services.service';
-import { LoaderService } from 'src/app/services/movies/loader-service.service';
 import { WathlistService } from 'src/app/services/movies/wathlist.service';
 
 @Component({
@@ -19,7 +18,6 @@ export class GalleryComponent implements OnInit {
   constructor(
     private trendMoviesService: GetTrendMoviesService,
     private searchListService: MovieDataServices,
-    private loaderService: LoaderService,
     private watchlistService: WathlistService
   ) {}
 
@@ -37,10 +35,8 @@ export class GalleryComponent implements OnInit {
         this.list = searchList;
         this.isSearching = true;
       } else {
-        this.loaderService.showLoader();
         this.trendMoviesService.getTrendMovies().subscribe((data) => {
           this.list = data;
-          this.loaderService.hideLoader();
           this.isSearching = false;
         });
       }

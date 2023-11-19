@@ -1,6 +1,6 @@
-<button mat-button [matMenuTriggerFor]="menu" style="color: white;">Menu</button>
+<button mat-button [matMenuTriggerFor]="menu" style="color: white">Menu</button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item routerLink="/">Home</button>
-  <button mat-menu-item routerLink="/movies">Movies</button>
-  <button mat-menu-item routerLink="/serials">Serials</button>
+  <a mat-menu-item href="/"> Home </a>
+  <a mat-menu-item href="/">Movies</a>
+  <a mat-menu-item href="/serials">Serials</a>
 </mat-menu>

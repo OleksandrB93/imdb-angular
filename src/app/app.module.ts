@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -16,6 +16,9 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { TvListComponent } from './components/tv-list/tv-list.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { LoaderService } from './services/movies/loader-service.service';
+import { LoadingInterceptor } from './interceptors/loading-interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TrailerComponent,
     WatchlistComponent,
     TvListComponent,
+    // HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,9 +40,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     CarouselModule.forRoot(),
     HeaderComponent,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    CommonModule,
   ],
-  providers: [],
+  providers: [
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

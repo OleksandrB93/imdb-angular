@@ -22,8 +22,7 @@ export class HeaderComponent {
 
   constructor(
     private getMovieMyKeywordService: GetMovieMyKeywordService,
-    private searchListService: MovieDataServices,
-    private loaderService: LoaderService
+    private searchListService: MovieDataServices
   ) {}
 
   @HostListener('window:scroll', [])
@@ -32,15 +31,9 @@ export class HeaderComponent {
   }
 
   getMovieByKeyword() {
-    this.loaderService.showLoader();
-
     this.getMovieMyKeywordService
       .getMovieByKeyword(this.keyword)
-      .pipe(
-        finalize(() => {
-          this.loaderService.hideLoader();
-        })
-      )
+      .pipe(finalize(() => {}))
       .subscribe((data) => {
         this.searchList = data.results;
         this.searchListService.updateSearchList(this.searchList);

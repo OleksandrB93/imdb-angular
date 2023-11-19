@@ -16,7 +16,6 @@ export class WatchlistComponent implements OnInit {
 
   ngOnInit(): void {
     this.watchlist = this.watchlistService.getWatchlist();
-    console.log(this.watchlist);
   }
 
   removeFromWatchlist(movieId: number): void {

@@ -14,20 +14,16 @@ export class MovieDetailsComponent implements OnInit {
   movie!: Movie;
   id!: number;
   pictureUri: string = PICTURE_URI_SMALL;
-  
+
   constructor(
     private getMovieByIdService: GetMovieByIdService,
-    private route: ActivatedRoute,
-    private loaderService: LoaderService
-
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.loaderService.showLoader();
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.getMovieByIdService.getMovieById(this.id).subscribe((data) => {
       this.movie = data;
-      this.loaderService.hideLoader();
-    })
+    });
   }
 }

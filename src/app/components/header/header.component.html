@@ -4,7 +4,7 @@
   <app-burger-menu></app-burger-menu>
 
   <div style="display: flex; position: relative; width: 100%">
-    <input class="header__input" type="text" placeholder="Search" />
+    <input class="header__input" type="text" placeholder="Search" [(ngModel)]="keyword"/>
     <button
       type="button"
       class="header__input__button"
@@ -16,7 +16,7 @@
 
   <button type="button" class="header__subscribe__button">IMDBPro</button>
   <div class="header__separater"></div>
-  <a type="button" class="header__button__watchlist" routerLink="/watchlist">
+  <a type="button" class="header__button__watchlist" href="/watchlist">
     <i class="bi bi-bookmark-plus"></i>Wathchlist
   </a>
 </header>

@@ -1,9 +1,14 @@
+@if (!isSearching) {
 <app-slider *ngIf="!isSearching" [list]="list"></app-slider>
-
-<app-pagination-buttons *ngIf="!isSearching"></app-pagination-buttons>
+}
+<!--  -->
+@if(!isSearching) {
+<app-pagination-buttons *ngIf="isSearching"></app-pagination-buttons>
+}
 
 <ul class="gallery" [ngClass]="isSearching ? 'marginTop' : ''">
-  <li *ngFor="let item of list" class="gallery__item">
+  @for (item of list; track item.id){
+  <li class="gallery__item">
     <div [routerLink]="[item.id]">
       <img [src]="pictureUriSmall + item?.poster_path" [alt]="item.title" />
       <div class="gallery__item__description">
@@ -37,6 +42,9 @@
       </button>
     </div>
   </li>
+  }
 </ul>
 
+@if (!isSearching) {
 <app-pagination-buttons *ngIf="!isSearching"></app-pagination-buttons>
+}

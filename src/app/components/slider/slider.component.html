@@ -1,5 +1,6 @@
 <carousel [noPause]="false" [isAnimated]="true" class="slider">
-  <slide class="slide" *ngFor="let item of list" [routerLink]="[item.id]">
+  @for (item of list; track item.id) {
+  <slide class="slide" [routerLink]="[item.id]">
     <img
       class="slide__image"
       [src]="pictureUriBig + item.backdrop_path"
@@ -10,4 +11,5 @@
       <p>{{ item.overview }}</p>
     </div>
   </slide>
+  }
 </carousel>

@@ -1,3 +1,6 @@
+@if (loaderService.isLoading$ | async) {
 <div class="loader" *ngIf="loaderService.isLoading$ | async">
   <div class="loader__content lds-dual-ring"></div>
 </div>
+
+}
